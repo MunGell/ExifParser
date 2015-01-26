@@ -64,7 +64,7 @@ class ExifParser
      * @todo use this for timezone identification
      * @return array|null
      */
-    public function location()
+    public function coordinates()
     {
         $fields = [
             'GPSLatitudeRef',
@@ -84,6 +84,11 @@ class ExifParser
         $output['longitude'] = $this->parseCoordinates($fields['GPSLongitude'], $fields['GPSLongitudeRef']);
 
         return $output;
+    }
+
+    public function location()
+    {
+
     }
 
     public function created()
